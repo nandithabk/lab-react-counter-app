@@ -1,43 +1,29 @@
-import { useState } from "react";
-import React from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-import "./App.css";
+import { useState } from 'react'
+import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const add = () => {
-    setCount(count + 1);
-  };
-
-  const subtract = () => {
-    setCount(count - 1);
-  };
-
-  const reset = () => {
-    setCount(0);
-  };
+  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="container">
-        <h2>Counter App</h2>
-        <div id="counter">{count}</div>
-        <div className="buttons">
-          <button id="add" onClick={add}>
-            +
-          </button>
-          <button id="subtract" onClick={subtract}>
-            -
-          </button>
-          <button id="reset" onClick={reset}>
-            reset
-          </button>
-        </div>
+      <h1>Counter App</h1>
+      <div>
+        <h1>{count}</h1>
       </div>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          +
+        </button>
+        <button onClick={() => setCount((count) => count - 1)}>
+          -
+        </button>
+        <button onClick={() => setCount((count) => 0)}>
+          Reset
+        </button>
+      </div>
+
     </>
-  );
+  )
 }
 
-export default App;
+export default App
